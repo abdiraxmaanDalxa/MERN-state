@@ -1,14 +1,16 @@
 import React from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Singin from './components/Singin'
-import SingUp from './components/SingUp'
-import About from './components/About'
-import Profile from './components/Profile'
-import Home from './components/Home'
+import Singin from './pages/Singin'
+import SingUp from './pages/SingUp'
+import About from './pages/About'
+import Profile from './pages/Profile'
+import Home from './pages/Home'
+import Header from './components/Header'
 
 function App() {
   return (
     <BrowserRouter>
+    <Header />
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/about" element={<About />}></Route>
@@ -19,5 +21,5 @@ function App() {
     </BrowserRouter>
   )
 }
-
+ 
 export default App
