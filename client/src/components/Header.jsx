@@ -27,6 +27,11 @@ function Header() {
 
                     <li className=" font-medium hover:underline">Singin</li>
                     </Link>
+
+                    <Link to="/sing-up">
+
+                    <li className=" font-medium hover:underline">sing-up</li>
+                    </Link>
                 </ul>
 
             </div>
