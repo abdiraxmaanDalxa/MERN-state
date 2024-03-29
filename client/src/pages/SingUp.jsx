@@ -6,7 +6,7 @@ import axios from "axios";
 function SingUp() {
   const navigate = useNavigate();
   const form = useForm();
-  const api = "http://localhost:3000/api/v1/user";
+  const api = "http://localhost:3000/api/v1/auth/singup";
   const { register, handleSubmit } = form;
 
   // Define state variables for error and loading

@@ -5,7 +5,7 @@ import prisma from "../prisma/client.js";
 export const singup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    
+    // console.log(req.body)
     // Generate a salt value
     const salt = bcrypt.genSaltSync(10);
     // Hash the password using the salt
@@ -37,7 +37,10 @@ export const singin = async (req, res) => {
         
         // Sending response without including the password
         const { password: pass, ...rest } = validUser;
-        res.cookie("access_token", token, { httpOnly: true }).status(200).json({ id: validUser.id, ...rest });
+        res
+          .cookie("access_token", token, { httpOnly: true })
+          .status(200)
+          .json(rest);
     } catch (error) {
         return res.status(400).json(error.message);
     }
